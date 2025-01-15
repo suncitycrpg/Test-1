@@ -1,0 +1,9 @@
+{
+      "name": "telegram-mini-app",
+      "scripts": {
+            "dev": "vite"
+      },
+      "devDependencies": {
+            "vite": "^6.0.7"
+      }
+}
