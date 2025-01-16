@@ -1,0 +1,354 @@
+/* Основной фон приложения */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100dvh;
+  background-image: url('background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Gray Plate с фиксированным положением */
+.gray-plate {
+  position: absolute;
+  top: calc(12dvh);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  max-width: 360px;
+  height: calc(130dvh);
+  max-height: 660px;
+  background-color: #6666FF;
+  background-image: url('display.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: multiply;
+  border-radius: 30px;
+  z-index: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* Кнопки заданий */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: clamp(50px, 8dvh, 50px);
+  padding: clamp(4px, 1.5dvh, 8px);
+  margin: 0;
+  border: none;
+  border-radius: 25px;
+  color: #FFD700;
+  font-size: clamp(12px, 2.5vw, 14px);
+  cursor: pointer;
+  transition: opacity 0.3s;
+  background-color: #FFE5CC;
+  background-image: url('button.png');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  position: relative;
+  z-index: 3;
+  box-sizing: border-box;
+}
+
+.btn i {
+  margin-right: 8px;
+  font-size: clamp(12px, 2.5vw, 14px);
+  width: 24px;
+  text-align: center;
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.task-text {
+  font-size: clamp(14px, 3vw, 16px);
+  font-weight: bold;
+}
+
+.task-points {
+  font-size: clamp(12px, 2.5vw, 14px);
+  color: #00FF00;
+  font-weight: bold;
+  text-shadow: 0 0 2px #00FF00;
+}
+
+/* Контейнер заданий */
+.container {
+  position: absolute;
+  top: calc(20dvh);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1cm;
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header-plate {
+  position: absolute;
+  top: calc(4dvh);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 320px;
+  height: calc(6dvh);
+  min-height: 50px;
+  background-color: #FFE5CC;
+  background-image: url('button.png');
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: #FFD700;
+  font-size: clamp(48px, 11vw, 48px);
+  font-weight: bold;
+  border-radius: 10px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0dvh;
+  white-space: pre;
+}
+
+.new-logo {
+  position: absolute;
+  top: calc(4dvh);
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(2.5cm, 8vw, 2.5cm);
+  height: clamp(2.5cm, 8vw, 2.5cm);
+  background-color: #FF0000;
+  background-image: url('logo.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  z-index: 4;
+  transition: all 0.3s ease;
+}
+
+.user-info {
+  position: absolute;
+  top: calc(20dvh);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  min-width: 75px;
+  max-width: 150px;
+  height: calc(5dvh);
+  min-height: 40px;
+  background-color: #FFE5CC;
+  background-image: url('button.png');
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: #FFD700;
+  font-size: clamp(12px, 3vw, 16px);
+  font-weight: bold;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scoreboard {
+  position: absolute;
+  top: calc(26dvh);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  max-width: 200px;
+  height: calc(10dvh);
+  min-height: 80px;
+  background-color: transparent;
+  border: 3px solid #00FF00;
+  border-radius: 20px;
+  color: #00FF00;
+  font-size: clamp(24px, 4vw, 24px);
+  font-weight: bold;
+  text-align: center;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1dvh;
+}
+
+.nav-buttons,
+.nav-buttons-bottom {
+  position: absolute;
+  bottom: calc(8dvh);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 320px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  z-index: 3;
+}
+
+.nav-btn {
+  width: clamp(160px, 30vw, 160px);
+  height: clamp(50px, 6dvh, 50px);
+  border-radius: 20px;
+  background-color: #FFE5CC;
+  background-image: url('button.png');
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: #FFD700;
+  font-size: clamp(16px, 3vw, 16px);
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.3s;
+  position: relative;
+  z-index: 3;
+}
+
+/* Daily Check-in */
+.daily-check-in {
+  position: absolute;
+  top: calc(64dvh);
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(140px, 40vw, 160px); /* Минимальная ширина 120px, предпочтительная 20vw, максимальная 180px */
+  height: clamp(140px, 40vw, 160px); /* Минимальная высота 120px, предпочтительная 20vw, максимальная 180px */
+  background-color: #FFE5CC;
+  background-image: url('redbutton.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  user-select: none;
+}
+
+.daily-check-in-text {
+  text-align: center;
+  color: #FFD700;
+  font-size: clamp(16px, 4vw, 18px); /* Минимальный размер 14px, предпочтительный 2.5vw, максимальный 18px */
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+/* Timer */
+.timer {
+  position: absolute;
+  top: calc(78dvh);
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(120px, 30vw, 200px); /* Минимальная ширина 120px, предпочтительная 30vw, максимальная 200px */
+  height: clamp(40px, 6dvh, 50px); /* Минимальная высота 40px, предпочтительная 6dvh, максимальная 50px */
+  background-color: #FFE5CC;
+  background-image: url('display.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  user-select: none;
+}
+
+.timer-text {
+  font-size: clamp(14px, 3vw, 24px); /* Минимальный размер 14px, предпочтительный 3vw, максимальный 24px */
+  font-weight: bold;
+  color: #00FF00;
+}
+
+.custom-plate {
+  position: absolute;
+  top: calc(43dvh);
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(150px, 25vw, 200px);
+  height: clamp(50px, 6dvh, 60px);
+  border: 3px solid #FFD700;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  z-index: 3;
+}
+
+.custom-plate-text {
+  font-size: clamp(18px, 4vw, 24px);
+  color: #FFD700;
+  font-weight: bold;
+}
+
+.about-content {
+  position: absolute;
+  top: calc(50dvh);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 300px;
+  padding: clamp(0.8cm, 5%, 1.5cm);
+  box-sizing: border-box;
+  color: #FFD700;
+  font-size: clamp(11px, 2.5vw, 13px);
+  line-height: 1.4;
+  text-align: justify;
+  z-index: 2;
+}
+
+.version-info {
+  background-color: rgba(128,128,128, 0.8);
+  padding: clamp(4px, 1dvh, 6px);
+  text-align: center;
+  font-size: clamp(9px, 2vw, 11px);
+  color: #E6E6E6;
+  width: auto;
+  box-sizing: border-box;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  display: inline-block;
+  position: absolute;
+  bottom: calc(3dvh);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.btn:hover,
+.nav-btn:hover {
+  opacity: 0.9;
+}
+
+.subscribe.disabled,
+.like.disabled,
+.invite.disabled {
+  background-color: rgba(210, 180, 140, 0.5);
+  cursor: not-allowed;
+}
