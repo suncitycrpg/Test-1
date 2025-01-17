@@ -1,0 +1,356 @@
+/* Основные стили для html и body */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Основной контейнер с фиксированной высотой */
+.main-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url('background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Gray Plate с исправленными отступами и размерами */
+.gray-plate {
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+  right: 5vw;
+  bottom: 5vh;
+  width: 90vw;
+  height: 90vh;
+  background-color: #6666FF;
+  background-image: url('display.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: multiply;
+  border-radius: 30px;
+  z-index: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 2vh;
+}
+
+/* Новая плашка Header */
+.header-plate {
+  position: absolute;
+  top: 0%; /* Отступ сверху 10% от высоты gray-plate */
+  left: 50%; /* Центрирование по горизонтали */
+  transform: translateX(-50%);
+  width: 70vw; /* Ширина плашки */
+  height: 8vh; /* Высота плашки */
+  background-color: #FFE5CC; /* Цвет плашки */
+  background-image: url('button.png'); /* Текстура */
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: #FFD700; /* Цвет текста */
+  font-size: 5vh; /* Размер шрифта */
+  font-weight: bold; /* Жирный текст */
+  border-radius: 10px; /* Закругление углов */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+/* Плашка Logo */
+.logo {
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25vw; /* Ширина в vw */
+  height: 25vw; /* Высота равна ширине для квадрата */
+  background-color: red; /* Временный цвет для отладки */
+  background-image: url('logo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  z-index: 9999; /* Увеличиваем z-index, чтобы плашка была поверх других элементов */
+ }
+
+/* Контейнер заданий */
+.container {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Информация о пользователе */
+.user-info {
+  position: absolute;
+  top: 26%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30vw;
+  height: 5vh;
+  background-color: #FFE5CC;
+  background-image: url('button.png');
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: #FFD700;
+  font-size: 2vh;
+  font-weight: bold;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Таблица очков */
+.scoreboard {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50vw;
+  height: 10vh;
+  background-color: transparent;
+  border: 0.3vh solid #00FF00;
+  border-radius: 20px;
+  color: #00FF00;
+  font-size: 3vh;
+  font-weight: bold;
+  text-align: center;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+}
+
+/* Кнопки навигации */
+.nav-buttons,
+.nav-buttons-bottom {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 2vw;
+  z-index: 3;
+}
+
+/* Кнопки навигации */
+.nav-btn {
+  width: 30vw;
+  height: 6vh;
+  border-radius: 20px;
+  background-color: #FFE5CC;
+  background-image: url('button.png');
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: #FFD700;
+  font-size: 2vh;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.3s;
+  position: relative;
+  z-index: 3;
+}
+
+/* Кнопки заданий */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 8vh;
+  padding: 1vh;
+  margin: 0;
+  border: none;
+  border-radius: 25px;
+  color: #FFD700;
+  font-size: 2vh;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  background-color: #FFE5CC;
+  background-image: url('button.png');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  position: relative;
+  z-index: 3;
+  box-sizing: border-box;
+}
+
+.btn i {
+  margin-right: 1vw;
+  font-size: 2vh;
+  width: 24px;
+  text-align: center;
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.task-text {
+  font-size: 2.5vh;
+  font-weight: bold;
+}
+
+.task-points {
+  font-size: 2vh;
+  color: #00FF00;
+  font-weight: bold;
+  text-shadow: 0 0 0.2vh #00FF00;
+}
+
+/* Daily Check-in */
+.daily-check-in {
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40vw;
+  height: 20vh;
+  background-color: #FFE5CC;
+  background-image: url('redbutton.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+  user-select: none;
+}
+
+.daily-check-in-text {
+  text-align: center;
+  color: #FFD700;
+  font-size: 3vh;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+/* Timer */
+.timer {
+  position: absolute;
+  top: 78%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40vw;
+  height: 6vh;
+  background-color: #FFE5CC;
+  background-image: url('display.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  user-select: none;
+}
+
+.timer-text {
+  font-size: 3vh;
+  font-weight: bold;
+  color: #00FF00;
+}
+
+/* Custom Plate */
+.custom-plate {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30vw;
+  height: 6vh;
+  border: 0.3vh solid #FFD700;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  z-index: 3;
+}
+
+.custom-plate-text {
+  font-size: 3vh;
+  color: #FFD700;
+  font-weight: bold;
+}
+
+/* About Screen Content */
+.about-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  padding: 2vh;
+  box-sizing: border-box;
+  color: #FFD700;
+  font-size: 2vh;
+  line-height: 1.4;
+  text-align: justify;
+  z-index: 2;
+}
+
+/* Version Info */
+.version-info {
+  background-color: rgba(128,128,128, 0.8);
+  padding: 1vh;
+  text-align: center;
+  font-size: 1.5vh;
+  color: #E6E6E6;
+  width: auto;
+  box-sizing: border-box;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  display: inline-block;
+  position: absolute;
+  bottom: 0.3%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+/* Hover Effects */
+.btn:hover,
+.nav-btn:hover {
+  opacity: 0.9;
+}
+
+/* Disabled Buttons */
+.subscribe.disabled,
+.like.disabled,
+.invite.disabled {
+  background-color: rgba(210, 180, 140, 0.5);
+  cursor: not-allowed;
+}
